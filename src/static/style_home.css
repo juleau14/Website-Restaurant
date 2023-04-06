@@ -36,7 +36,7 @@
 
 
 .background-container {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100vh;
     background-image: url(medias/banner-background.jpg);
@@ -52,6 +52,7 @@
     justify-content: space-around;
     align-items: center;
     height: 70px;
+    padding: 0 10vw;
 }
 
 
@@ -59,7 +60,7 @@
     display: flex;
     flex-direction: row;
     font-family: louis-george-cafe;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .info {
@@ -71,7 +72,9 @@
 
 .info svg {
     width: 16px;
+    min-width: 16px;
     margin-right: 5px;
+    color: yellow;
 }
 
 
@@ -92,20 +95,27 @@
     align-items: center;
     padding: 0 15px;
     font-family: monofonto;
-    transition: 0.5s;
     color: black;
     margin-right: 100px;
+    transition: 0.2s;
 }
 
 .reservation-link:hover {
-    background-color: grey;
+    background-color: #589442;
+    color: white;
+    transform: scaleX(120%);
 }
 
 
+.networks-links {
+    display: flex;
+    flex-direction: row;
+}
+
 .networks-links img {
-    width: 16px;
-    height: 16px;
-    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
 }
 
 
@@ -120,28 +130,21 @@ main {
 
 
 .main-logo {
-    width: 20vh;
-    margin-bottom: 50px;
+    width: 40vh;
+    margin-bottom: 30px;
+    margin-top: -100px;
 }
 
 
 .main-text-content {
-    margin-top: 50px;
     text-align: center;
     font-family: louis-george-cafe;
 }
 
 
-.main-title {
-    font-family: ITC-modern;
-    font-size: 50px;
-    margin-bottom: 10px;
-}
-
-
 .main-description {
-    margin-bottom: 10px;
-    font-size: 40px;
+    margin-bottom: 20px;
+    font-size: 50px;
 }
 
 .main-location {
@@ -152,14 +155,15 @@ main {
 .menu {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     justify-content: space-around;
+    background-color: white;
 }
 
 .menu-title {
     text-align: center;
     font-family: ITC-modern;
     font-size: 40px;
+    text-decoration: underline;
 }
 
 
@@ -167,16 +171,188 @@ main {
     width: 100%;
     display: flex;
     flex-direction: row;
+    font-family: louis-george-cafe;
 }
 
 .menu-content-left {
     width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-vertical-bar-container {
+    position: absolute;
+    width: 100%;
     height: 100%;
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-vertical-bar  {
+    position: absolute;
+    background-color: black;
+    height: 80vh;
+    width: 1px;
 }
 
 .menu-content-right {
     width: 50%;
-    height: 100%;
-    background-color: blue;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-content-title {
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 6vw;
+}
+
+
+.menu-details-list {
+    width: 60%;
+}
+
+.menu-details-list p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2vw;
+    padding: 1vw 0;
+}
+
+
+.planning {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+}
+
+
+.planning-text {
+    font-family: louis-george-cafe;
+    font-size: 50px;
+    text-align: center;
+    padding: 100px 20vw;
+}
+
+
+footer {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer p {
+    width: 100%;
+    padding: 50px 50px;
+    text-align: center;
+    font-family: louis-george-cafe;
+    color: white;
+}
+
+
+@media all and (max-width: 1366px) {
+    .reservation-link {
+        margin-right: 50px;
+    }
+
+    .informations {
+        font-size: 20px;
+    }
+
+    .planning-text {
+        font-size: 40px;
+    }
+}
+
+
+@media all and (max-width: 768px) {
+    .informations {
+        font-size: 15px;
+    }
+
+    .info {
+        margin-right: 10px;
+    }
+
+    .networks-links {
+        display: none;
+    }
+
+    .reservation-link {
+        margin-right: 0;
+    }
+
+    .main-description {
+        padding: 0 30px;
+    }
+
+    .planning-text {
+        font-size: 30px;
+        padding: 50px 10vw;
+    }
+
+    .menu-vertical-bar {
+        transform: rotate(90deg);
+    }
+
+    .menu-content {
+        flex-direction: column;
+    }
+
+    .menu-content-left {
+        width: 100%;
+    }
+
+    .menu-content-right {
+        width: 100%;
+    }
+
+    .menu-content-title {
+        font-size: 12vw;
+    }
+
+    .menu-details-list p {
+        font-size: 4vw;
+    }
+
+    .menu-vertical-bar-container {
+        height: 200vh;
+    }
+
+    .menu-vertical-bar {
+        height: 80vw;
+    }
+}
+
+@media all and (max-width: 450px) {
+
+    .informations {
+        display: none;
+    }
+
+    .main-logo {
+        width: 30vh;
+    }
+
+    .menu-content-title {
+        font-size: 18vw;
+    }
+
+    .menu-details-list p {
+        font-size: 6vw;
+    }
 }
